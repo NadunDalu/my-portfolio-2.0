@@ -1,5 +1,6 @@
 import { FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaDocker, FaGitAlt, FaCss3Alt } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiPython, SiJava, SiMysql, SiFirebase, SiFigma, SiMarkdown, SiVisualstudiocode, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiExpress, SiPython, SiJava, SiMysql, SiFirebase, SiFigma, SiMarkdown, SiNextdotjs } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaJava } from "react-icons/fa6";
 import { SiFlutter } from "react-icons/si";
@@ -26,7 +27,7 @@ export const skillData = {
         { name: 'Firebase', icon: SiFirebase },
         { name: 'Figma', icon: SiFigma },
         { name: 'Next.js', icon: SiNextdotjs },
-        { name: 'Packet Tracer', icon: SiVisualstudiocode },
+        { name: 'Packet Tracer', icon: VscVscode },
         { name: 'GNS3', icon: SiMarkdown }
         
         
