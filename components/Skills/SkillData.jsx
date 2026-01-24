@@ -25,7 +25,9 @@ export const skillData = {
         { name: 'Docker', icon: FaDocker },
         { name: 'Firebase', icon: SiFirebase },
         { name: 'Figma', icon: SiFigma },
-        { name: 'Next.js', icon: SiNextdotjs }
+        { name: 'Next.js', icon: SiNextdotjs },
+        { name: 'Packet Tracer', icon: SiVisualstudiocode },
+        { name: 'GNS3', icon: SiMarkdown }
         
         
     ]
