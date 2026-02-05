@@ -47,6 +47,7 @@ const Connect = () => {
                     <h1>{connectData.mainData.title3}</h1>
                     <p>{connectData.mainData.description}</p>
                     <ul className="list-inline-pills mt-4">
+                        <li>Phone: {connectData.mainData.phone}</li>
                         <li>Email: {connectData.mainData.email}</li>
                         <li>Address: {connectData.mainData.address}</li>
                     </ul>

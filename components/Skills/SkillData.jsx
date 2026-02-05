@@ -5,7 +5,11 @@ import {
   FaDatabase,
   FaDocker,
   FaGitAlt,
-  FaCss3Alt
+  FaCss3Alt,
+  FaLinux,
+  FaNetworkWired,
+  FaDesktop,
+  FaTerminal
 } from "react-icons/fa";
 
 import {
@@ -46,6 +50,10 @@ export const skillData = {
     { name: "Figma", icon: SiFigma },
     { name: "Next.js", icon: SiNextdotjs },
     { name: "Packet Tracer", icon: VscVscode },
-    { name: "GNS3", icon: SiMarkdown }
+    { name: "GNS3", icon: SiMarkdown },
+    { name: "Linux", icon: FaLinux },
+    { name: "Networking", icon: FaNetworkWired },
+    { name: "VirtualBox", icon: FaDesktop },
+    { name: "Putty", icon: FaTerminal },
   ]
 };

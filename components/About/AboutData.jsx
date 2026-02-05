@@ -5,12 +5,12 @@ export const aboutData = {
         title: "About Me",
         title2: "About Me",
         heroAvatar: HeroAvatar,
-        jobTitle: "UI & UX Designer. Frontend Developer",
-        description: "I am a passionate designer with a keen eye for detail and a strong appreciation for aesthetics. I am a creative thinker who enjoys problem-solving and creating user-centric designs. I have a strong foundation in design principles and a solid understanding of front-end development. I am always looking to learn and grow as a designer and developer.",
+        jobTitle: "Undergraduate IT Student",
+        description: "A motivated undergraduate IT student with a strong interest in networking, cloud technologies, and system administration. Experienced in hands-on lab work, practical assignments, and real-world problem solving. Passionate about learning new technologies, improving technical skills, and contributing effectively to team-based environments.",
         yearsOfExperience: "06",
         hoursOfWorking: "20",
-        projectsDone: "08",
-        typewriter: ['I\'m Nadun', 'UI/UX Designer', 'Frontend Developer', 'Mobile App Developer'],
+        projectsDone: "15",
+        typewriter: ['I\'m Nadun', 'Undergraduate', 'IT Student', 'Network Enthusiast'],
     },
     skills: [
         {

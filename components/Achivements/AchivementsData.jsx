@@ -11,29 +11,24 @@ export const achivementsData = {
     },
     achivements: [
         {
+            image: Certificate2,
+            name: 'CODEFEST 2025 – Merit Award (Netcom Contest)',
+            issuer: 'SLIIT',
+        },
+        {
+            image: Certificate3,
+            name: 'Certificate of Appreciation – Best Performance',
+            issuer: 'ICT Society, USJP',
+        },
+        {
             image: Certificate1,
             name: 'Foundations of User Experience (UX) Design',
             issuer: 'Google',
         },
         {
-            image: Certificate2,
-            name: 'Innovate with Ballerina Coding Challenge',
-            issuer: 'WSO2',
-        },
-        {
-            image: Certificate3,
-            name: 'ISO/IEC 20000 IT SERVICE MANAGEMENT ASSOCIATE™',
-            issuer: 'WWW.SKILLFRONT.COM',
-        },
-        {
             image: Certificate4,
             name: 'Certificate in Digital Marketing',
             issuer: 'Sri Lanka Institute of Marketing',
-        },
-        {
-            image: Certificate5,
-            name: 'Asure Resource Management',
-            issuer: 'MS Student Ambasidor Coding Bootcamp',
         },
     ]
 };
