@@ -1,40 +1,55 @@
+import USJPLogo from '@/public/images/usjp-logo.png';
+import UoMLogo from '@/public/images/uom-logo.png';
+import SLIMLogo from '@/public/images/slim-logo.png';
+import SchoolLogo from '@/public/images/stc-logo.png';
+
 export const eduData = {
     mainData: {
-        title: "Resume",
-        title2: "Education & Experience",
+        title: "Education",
+        title2: "My Education",
     },
     education: [
         {
-            date: '2022 - Present',
-            degree: 'Bachelor of ICT, Software Technology',
+            image: USJPLogo,
+            degree: 'Bachelor of Information and Communication Technology',
+            specialization: 'Software Technology Specialization',
             university: 'University of Sri Jayewardenepura',
+            date: '2022 - Present',
+            status: 'Ongoing'
         },
         {
-            date: '2025 - Present',
+            image: UoMLogo,
             degree: 'CCNA Reading (CCNA 200-301)',
-            university: 'University of Moratuwa',
+            specialization: 'Professional Certification Course',
+            university: 'Cisco Networking Center - University Of Moratuwa',
+            date: '2025 - Present',
+            status: 'Ongoing'
         },
         {
-            date: '2020',
+            image: SLIMLogo,
+            degree: 'Certificated in Digital Marketing',
+            specialization: 'Professional Certification Course',
+            university: 'Sri Lanka Institute of Marketing',
+            date: '2023',
+            status: 'Completed'
+        },
+        {
+            image: SchoolLogo,
             degree: 'G.C.E Advanced Level',
-            university: 'St. Thomas\' Collage - Matale',
+            specialization: 'Technology Stream',
+            university: 'St. Thomas\' College - Matale',
+            date: '2020',
+            status: 'Completed',
+            results: '2A, 1B',
+            rank: 'District Rank: 4'
+        },
+        {
+            image: SchoolLogo,
+            degree: 'G.C.E Ordinary Level',
+            university: 'St. Thomas\' College - Matale',
+            date: '2017',
+            status: 'Completed',
+            results: '7A, 2B',
         },
     ],
-    experience: [
-        {
-            date: 'April 2025 - Oct 2025',
-            degree: 'Internship (UI/UX Designer)',
-            university: 'Payshia Software Solutions',
-        },
-        {
-            date: '2021 - Present',
-            degree: 'Graphic Designer & Owner',
-            university: 'Cybor Graphics',
-        },
-        {
-            date: 'June 2021 - April 2025',
-            degree: 'Banking Trainee',
-            university: 'People\'s Bank - Matale',
-        },
-    ]
 };

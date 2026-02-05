@@ -7,6 +7,7 @@ export { default as Portfolio } from "./Portfolio/Portfolio";
 export { default as PortfolioItem } from "./Portfolio/PortfolioItem";
 export { default as Services } from "./Services/Services";
 export { default as Education } from "./Education/Education";
+export { default as Experience } from "./Experience/Experience";
 export { default as Skills } from "./Skills/Skills";
 export { default as Testimonial } from "./Testimonial/Testimonial";
 export { default as Achivements } from "./Achivements/Achivements";

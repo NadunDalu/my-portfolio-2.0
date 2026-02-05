@@ -1,25 +1,25 @@
 import React from 'react'
 import Image from 'next/image'
-import { eduData } from './EduData'
+import { experienceData } from './ExperienceData'
 
-const Education = () => {
+const Experience = () => {
     return (
-        <div className="section-box mt-4" id="education">
+        <div className="section-box mt-4" id="experience">
             <div className="row">
                 <div className="col-12 col-md-10 col-xl-8">
-                    <h6 className="title-heading mb-3" data-backdrop-text={eduData.mainData.title}>{eduData.mainData.title}</h6>
-                    <h1>{eduData.mainData.title2}</h1>
+                    <h6 className="title-heading mb-3" data-backdrop-text={experienceData.mainData.title}>{experienceData.mainData.title}</h6>
+                    <h1>{experienceData.mainData.title2}</h1>
                 </div>
             </div>
             <div className="row g-4 mt-5">
                 <style>{`
-                    .education-timeline-container {
+                    .experience-timeline-container {
                         position: relative;
                         padding-left: 20px;
                         padding-top: 10px;
                     }
                     /* Vertical Dotted Line */
-                    .education-timeline-container::before {
+                    .experience-timeline-container::before {
                         content: '';
                         position: absolute;
                         left: 20px;
@@ -30,7 +30,7 @@ const Education = () => {
                     }
                     
                     /* Top Icon */
-                    .timeline-icon-top {
+                    .timeline-icon-top-exp {
                         position: absolute;
                         left: 5px;
                         top: -40px;
@@ -38,17 +38,17 @@ const Education = () => {
                         color: #fff;
                     }
 
-                    .timeline-item {
+                    .timeline-item-exp {
                         position: relative;
                         padding-left: 60px;
                         margin-bottom: 50px;
                     }
-                    .timeline-item:last-child {
+                    .timeline-item-exp:last-child {
                         margin-bottom: 0;
                     }
 
                     /* Timeline Dot */
-                    .timeline-dot {
+                    .timeline-dot-exp {
                         position: absolute;
                         left: 15px; /* Aligned with vertical line */
                         top: 18px; /* Aligned with connector */
@@ -60,7 +60,7 @@ const Education = () => {
                     }
 
                     /* Horizontal Connector Line */
-                    .timeline-connector {
+                    .timeline-connector-exp {
                         position: absolute;
                         left: 20px;
                         top: 23px;
@@ -70,7 +70,7 @@ const Education = () => {
                     }
 
                     /* Date Pill */
-                    .date-badge {
+                    .date-badge-exp {
                         display: inline-block;
                         padding: 8px 25px;
                         border: 1px dashed rgba(255, 255, 255, 0.4);
@@ -84,25 +84,14 @@ const Education = () => {
                         background: rgba(255, 255, 255, 0.05);
                     }
 
-                    .edu-content {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .edu-degree {
+                    .exp-degree {
                         font-size: 1.5rem;
                         font-weight: 700;
                         color: #fff;
                         margin-bottom: 5px;
                     }
 
-                    .edu-uni {
-                        font-size: 1.1rem;
-                        color: rgba(255, 255, 255, 0.6);
-                        font-weight: 400;
-                    }
-
-                    .edu-specialization {
+                    .exp-specialization {
                         color: #a855f7;
                         font-size: 0.95rem;
                         font-weight: 600;
@@ -110,7 +99,7 @@ const Education = () => {
                         margin-top: -2px;
                     }
 
-                    .edu-meta {
+                    .exp-meta {
                         display: flex;
                         align-items: center;
                         gap: 8px;
@@ -118,11 +107,11 @@ const Education = () => {
                         font-size: 0.95rem;
                     }
                     
-                    .edu-meta i {
+                    .exp-meta i {
                         font-size: 0.9rem;
                     }
 
-                    .edu-logo-wrapper {
+                    .exp-logo-wrapper {
                         flex-shrink: 0;
                         width: 60px;
                         height: 60px;
@@ -136,43 +125,43 @@ const Education = () => {
                     }
 
                     @media (max-width: 768px) {
-                        .education-timeline-container {
+                        .experience-timeline-container {
                             padding-left: 10px;
                         }
-                        .education-timeline-container::before {
+                        .experience-timeline-container::before {
                             left: 10px;
                         }
-                        .timeline-dot {
+                        .timeline-dot-exp {
                             left: 5px;
                         }
-                        .timeline-connector {
+                        .timeline-connector-exp {
                             left: 10px;
                             width: 30px;
                         }
-                        .timeline-item {
+                        .timeline-item-exp {
                             padding-left: 50px;
                         }
-                        .edu-logo-wrapper {
+                        .exp-logo-wrapper {
                             width: 50px;
                             height: 50px;
                         }
                     }
                 `}</style>
                 <div className="col-12">
-                    <div className="education-timeline-container">
-                        <div className="timeline-icon-top">
-                            <i className="bi bi-mortarboard"></i>
+                    <div className="experience-timeline-container">
+                        <div className="timeline-icon-top-exp">
+                            <i className="bi bi-briefcase"></i>
                         </div>
-                        {eduData.education.map((item, index) => (
-                            <div key={index} className="timeline-item">
-                                <div className="timeline-dot"></div>
-                                <div className="timeline-connector"></div>
-                                <div className="edu-content">
+                        {experienceData.experience.map((item, index) => (
+                            <div key={index} className="timeline-item-exp">
+                                <div className="timeline-dot-exp"></div>
+                                <div className="timeline-connector-exp"></div>
+                                <div className="exp-content">
                                     <div>
-                                        <span className="date-badge">{item.date}</span>
+                                        <span className="date-badge-exp">{item.date}</span>
                                     </div>
                                     <div className="d-flex gap-3 gap-md-4 align-items-start">
-                                        <div className="edu-logo-wrapper">
+                                        <div className="exp-logo-wrapper">
                                             <Image
                                                 src={item.image}
                                                 alt={item.university}
@@ -183,24 +172,12 @@ const Education = () => {
                                             />
                                         </div>
                                         <div>
-                                            <h3 className="edu-degree">{item.degree}</h3>
-                                            <div className="edu-specialization">{item.specialization}</div>
-                                            <div className="edu-meta">
+                                            <h3 className="exp-degree">{item.degree}</h3>
+                                            <div className="exp-specialization">{item.specialization}</div>
+                                            <div className="exp-meta">
                                                 <i className="bi bi-geo-alt-fill"></i>
                                                 <span>{item.university}</span>
                                             </div>
-                                            {item.results && (
-                                                <div className="edu-meta mt-1">
-                                                    <i className="bi bi-trophy"></i>
-                                                    <span>Results: {item.results}</span>
-                                                    {item.rank && (
-                                                        <>
-                                                            <span className="mx-2" style={{ opacity: 0.3 }}>|</span>
-                                                            <span>{item.rank}</span>
-                                                        </>
-                                                    )}
-                                                </div>
-                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -213,4 +190,4 @@ const Education = () => {
     )
 }
 
-export default Education
+export default Experience
