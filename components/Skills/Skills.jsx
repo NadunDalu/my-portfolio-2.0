@@ -37,23 +37,28 @@ const Skills = () => {
                     <p>{skillData.mainData.description}</p>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-12">
-                    <div className="d-flex gap-4 flex-wrap align-items-center">
-                        {skillData.technical.map((skill, index) => (
-                            <div
-                                key={index}
-                                className={`skill-icon-wrapper ${isVisible ? 'flip' : ''}`}
-                                style={{
-                                    animationDelay: `${index * 100}ms`
-                                }}
-                            >
-                                <skill.icon className="display-5" />
-                                <p className="skill-name">{skill.name}</p>
+            <div className="row g-5">
+                {skillData.categories.map((category, catIndex) => (
+                    <div key={catIndex} className="col-12 col-md-6">
+                        <div className="category-card h-100">
+                            <h4 className="mb-4" style={{ color: "var(--primary-color)" }}>{category.title}</h4>
+                            <div className="d-flex gap-4 flex-wrap align-items-center icon-container">
+                                {category.skills.map((skill, index) => (
+                                    <div
+                                        key={index}
+                                        className={`skill-icon-wrapper ${isVisible ? 'flip' : ''}`}
+                                        style={{
+                                            animationDelay: `${(catIndex * 5 + index) * 100}ms`
+                                        }}
+                                    >
+                                        <skill.icon style={{ fontSize: "2rem" }} />
+                                        <p className="skill-name">{skill.name}</p>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
 
             <style jsx global>{`
@@ -64,6 +69,12 @@ const Skills = () => {
                     perspective: 1000px;
                     transform-style: preserve-3d;
                     opacity: 0;
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+                }
+
+                .skill-icon-wrapper:hover {
+                    transform: translateY(-5px);
                 }
 
                 .skill-icon-wrapper.flip {
@@ -71,9 +82,11 @@ const Skills = () => {
                 }
 
                 .skill-name {
-                    margin-top: 8px;
-                    font-size: 1rem;
+                    margin-top: 10px;
+                    font-size: 0.9rem;
                     text-align: center;
+                    font-weight: 500;
+                    color: var(--text-color);
                 }
 
                 @keyframes flipIcon {

@@ -1,13 +1,15 @@
 // Updated code for Portfolio.jsx
-import React, { useState } from 'react';
-import { PortfolioItem } from '../';
+import React, { useState, useEffect } from 'react';
 import { portfolioData } from './PortfolioData';
+import PortfolioModal from './PortfolioModal';
+import PortfolioItem from './PortfolioItem';
 
 const ITEMS_PER_PAGE = 6; // Max projects per page
 
 const Portfolio = () => {
     const [selectedFilter, setSelectedFilter] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const filteredProjects = selectedFilter === ''
         ? portfolioData.projects
@@ -34,6 +36,34 @@ const Portfolio = () => {
 
     const canGoNext = currentPage < totalPages - 1;
     const canGoPrevious = currentPage > 0;
+
+    const openProjectModal = (project) => {
+        setSelectedProject(project);
+        document.body.classList.add('modal-open');
+    };
+
+    const closeProjectModal = () => {
+        setSelectedProject(null);
+        document.body.classList.remove('modal-open');
+    };
+
+    // Cleanup on unmount
+    useEffect(() => {
+        return () => {
+            document.body.classList.remove('modal-open');
+        };
+    }, []);
+
+    // Close modal on Escape key
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && selectedProject) {
+                closeProjectModal();
+            }
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, [selectedProject]);
 
     return (
         <div className="section-box mt-4 position-relative" id="portfolio">
@@ -76,7 +106,8 @@ const Portfolio = () => {
                         imageSrc={item.imageSrc}
                         categories={item.categories}
                         projectTitle={item.projectTitle}
-                        slug={item.slug}
+                        project={item}
+                        onProjectClick={openProjectModal}
                     />
                 ))}
             </div>
@@ -87,7 +118,7 @@ const Portfolio = () => {
                     <li
                         onClick={canGoPrevious ? goToPreviousPage : undefined}
                         className={!canGoPrevious ? 'mixitup-control-active' : ''}
-                        style={{ 
+                        style={{
                             cursor: canGoPrevious ? 'pointer' : 'default',
                             opacity: canGoPrevious ? 1 : 0.5,
                             pointerEvents: canGoPrevious ? 'auto' : 'none'
@@ -98,7 +129,7 @@ const Portfolio = () => {
                     <li
                         onClick={canGoNext ? goToNextPage : undefined}
                         className={!canGoNext ? 'mixitup-control-active' : ''}
-                        style={{ 
+                        style={{
                             cursor: canGoNext ? 'pointer' : 'default',
                             opacity: canGoNext ? 1 : 0.5,
                             pointerEvents: canGoNext ? 'auto' : 'none'
@@ -108,6 +139,15 @@ const Portfolio = () => {
                     </li>
                 </ul>
             </div>
+
+            {/* Portfolio Modal */}
+            {selectedProject && (
+                <PortfolioModal
+                    project={selectedProject}
+                    onClose={closeProjectModal}
+                    navigationList={portfolioData.navigationList}
+                />
+            )}
         </div>
     );
 };
